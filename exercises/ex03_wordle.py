@@ -3,7 +3,7 @@
 __author__ = "730656248"
 
 def contains_char(search_str: str, sing_chr: str) -> bool:
-    """Searches for the single character in the string"""
+    """Searches for the single character in the string."""
     assert len(sing_chr) == 1
     search_idx: int = 0
     while search_idx < len(search_str):
@@ -14,7 +14,7 @@ def contains_char(search_str: str, sing_chr: str) -> bool:
     return False      
 
 def emojified(user_guess: str, secret_word: str) -> str:
-    """String of emoji boxes whose color determines the accuracy of the guess"""
+    """String of emoji boxes whose color determines the accuracy of the guess."""
     assert len(user_guess) == len(secret_word)
     result: str = ""
     word_idx: int = 0
@@ -38,3 +38,22 @@ def input_guess(expc_len: int) -> str:
     while (expc_len < len(guess)) or (expc_len > len(guess)):
         guess = input(f"That wasn't {expc_len} chars! Try again: ")
     return guess
+
+def main() -> None:
+    """The entrypoint of the program and main game loop."""
+    secret: str = "crazy"
+    user_turns: int = 1
+    user_won: bool = False
+    while (user_turns <= 6) and (user_won is False):
+        guess: str = input_guess(len(secret))
+        print(f"=== Turn {user_turns}/6 ===")
+        print(emojified(guess, secret))
+        if guess == secret:
+            user_won = True
+            print(f"You won in {user_turns}/6 turns!")
+        user_turns += 1
+        if (user_turns == 7) and (user_won is False):
+            print("X/6 - Sorry, try again tomorrow!")
+
+if __name__ == "__main__":
+    main()
