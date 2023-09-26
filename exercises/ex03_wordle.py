@@ -41,7 +41,7 @@ def input_guess(expc_len: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret: str = "crazy"
+    secret: str = "codes"
     user_turns: int = 1
     user_won: bool = False
     while (user_turns <= 6) and (user_won is False):
@@ -57,3 +57,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
