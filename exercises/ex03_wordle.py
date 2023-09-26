@@ -2,6 +2,7 @@
 
 __author__ = "730656248"
 
+
 def contains_char(search_str: str, sing_chr: str) -> bool:
     """Searches for the single character in the string."""
     assert len(sing_chr) == 1
@@ -12,6 +13,7 @@ def contains_char(search_str: str, sing_chr: str) -> bool:
         else:
             search_idx += 1
     return False      
+
 
 def emojified(user_guess: str, secret_word: str) -> str:
     """String of emoji boxes whose color determines the accuracy of the guess."""
@@ -25,7 +27,7 @@ def emojified(user_guess: str, secret_word: str) -> str:
         if secret_word[word_idx] == user_guess[word_idx]:
             result += GREEN_BOX
             word_idx += 1           
-        elif contains_char(secret_word, user_guess[word_idx]) == True:
+        elif contains_char(secret_word, user_guess[word_idx]) is True:
             result += YELLOW_BOX
             word_idx += 1
         else:
@@ -33,11 +35,14 @@ def emojified(user_guess: str, secret_word: str) -> str:
             word_idx += 1
     return result
 
+
 def input_guess(expc_len: int) -> str:
+    """Makes sure the len of the guess is the same as the secret word"""
     guess: str = input(f"Enter a {expc_len} character word: ")
     while (expc_len < len(guess)) or (expc_len > len(guess)):
         guess = input(f"That wasn't {expc_len} chars! Try again: ")
     return guess
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -55,7 +60,6 @@ def main() -> None:
         if (user_turns == 7) and (user_won is False):
             print("X/6 - Sorry, try again tomorrow!")
 
+
 if __name__ == "__main__":
     main()
-
-
