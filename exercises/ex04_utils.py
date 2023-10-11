@@ -2,8 +2,11 @@
 
 __author__ = "730656248"
 
+
 def all(input: list[int], num: int) -> bool:
     """Checks if all the ints in the list equal the given int."""
+    if len(input) == 0:
+        return False
     list_idx: int = 0
     while len(input) > list_idx:
         if input[list_idx] != num:
@@ -23,14 +26,18 @@ def max(input: list[int]) -> int:
         current_int: int = input[input_idx]
         if current_int > max_int:
             max_int = current_int
-        input_idx +=1
-    return(max_int)
+        input_idx += 1
+    return (max_int)
 
 
 def is_equal(list_1: list[int], list_2: list[int]) -> bool:
     """Determines if two lists are equal."""
+    if (len(list_1) == 0) and (len(list_2) == 0):
+        return True     
+    if (len(list_1) == 0) or (len(list_2) == 0):
+        return False
     list_idx: int = 0
-    while (list_idx < len(list_1)) or (list_idx < len(list_2)):
+    while (list_idx < len(list_1)) and (list_idx < len(list_2)):
         if list_1[list_idx] != list_2[list_idx]:
             return False
         else:
