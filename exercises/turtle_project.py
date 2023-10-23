@@ -1,4 +1,4 @@
-"""Turtle Scene Project, landscape."""
+"""Turtle Scene Project-landscape."""
 
 __author__ = "730656248"
 
@@ -33,14 +33,14 @@ def main() -> None:
 
 
 def draw_grass(turtle: Turtle, x: float, y: float, width: float, length: float) -> None:
-    """Draw a rectangle of given width as grass"""
+    """Draw a rectangle of given width as grass."""
     turtle.pencolor(3, 177, 15)
     turtle.fillcolor(3, 177, 15)
     turtle.speed(90)
     turtle.hideturtle()
 
     turtle.penup()
-    turtle.goto(x,y)
+    turtle.goto(x, y)
     turtle.pendown()
 
     turtle.begin_fill()
@@ -62,7 +62,7 @@ def draw_trees(turtle_br: Turtle, turtle_gr: Turtle, x: float, y: float, width: 
     turtle_br.hideturtle()
 
     turtle_br.penup()
-    turtle_br.goto(x,y)
+    turtle_br.goto(x, y)
     turtle_br.pendown()
 
     turtle_br.begin_fill()
@@ -81,15 +81,15 @@ def draw_trees(turtle_br: Turtle, turtle_gr: Turtle, x: float, y: float, width: 
     turtle_gr.hideturtle()
 
     turtle_gr.penup()
-    turtle_gr.goto(x - 13,y)
+    turtle_gr.goto(x - 13, y)
     turtle_gr.pendown()
 
     turtle_gr.begin_fill()
-    i: int = 0
-    while (i < 3):
+    rounds: int = 0
+    while (rounds < 3):
         turtle_gr.forward(length + 26)
         turtle_gr.left(120)
-        i += 1
+        rounds += 1
     turtle_gr.end_fill()
 
 
@@ -100,7 +100,7 @@ def draw_mountains(turtle: Turtle, x: float, y: float, length: float) -> None:
     turtle.speed(90)
     
     turtle.penup()
-    turtle.goto(x,y)
+    turtle.goto(x, y)
     turtle.setheading(0.0)
     turtle.pendown()
 
@@ -127,7 +127,7 @@ def draw_sky(turtle_blu: Turtle, turtle_dark: Turtle, turtle_darkest: Turtle, x:
     turtle_darkest.speed(97)
 
     turtle_darkest.penup()
-    turtle_darkest.goto(x,y)
+    turtle_darkest.goto(x, y)
     turtle_darkest.pendown()
 
     turtle_darkest.begin_fill()
@@ -135,7 +135,7 @@ def draw_sky(turtle_blu: Turtle, turtle_dark: Turtle, turtle_darkest: Turtle, x:
     turtle_darkest.end_fill()
 
     turtle_dark.penup()
-    turtle_dark.goto(x,y)
+    turtle_dark.goto(x, y)
     turtle_dark.pendown()
 
     turtle_dark.begin_fill()
@@ -143,7 +143,7 @@ def draw_sky(turtle_blu: Turtle, turtle_dark: Turtle, turtle_darkest: Turtle, x:
     turtle_dark.end_fill()
  
     turtle_blu.penup()
-    turtle_blu.goto(x,y)
+    turtle_blu.goto(x, y)
     turtle_blu.pendown()
 
     turtle_blu.begin_fill()
@@ -162,7 +162,7 @@ def draw_sun(turtle: Turtle, turtle_2: Turtle, x: float, y: float, radius: float
     turtle_2.speed(97)
 
     turtle.penup()
-    turtle.goto(x,y)
+    turtle.goto(x, y)
     turtle.pendown()
 
     turtle.begin_fill()
@@ -170,12 +170,12 @@ def draw_sun(turtle: Turtle, turtle_2: Turtle, x: float, y: float, radius: float
     turtle.end_fill()
     
     turtle_2.penup()
-    turtle_2.goto(x,y)
+    turtle_2.goto(x, y)
     turtle_2.pendown()
-    i: int = 0
-    while (i < 155):
+    num: int = 0
+    while (num < 155):
         turtle_2.circle(radius)
-        i += 1
+        num += 1
         radius = radius * 0.97
 
 
