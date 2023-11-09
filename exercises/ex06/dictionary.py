@@ -49,17 +49,17 @@ def alphabetizer(inp_list: list[str]) -> dict[str, list[str]]:
     while idx < len(inp_list):
         current_word: str = inp_list[idx].lower()
         if current_word[0] in alp_dict:
-            alp_dict[(current_word[0])].append(current_word)
+            alp_dict[(current_word[0])].append(inp_list[idx])
         else:
-            alp_dict[(current_word[0])] = [current_word]
+            alp_dict[(current_word[0])] = [inp_list[idx]]
         idx += 1
     return alp_dict
         
 
 def update_attendance(days_dict: dict[str, list[str]], day: [str], student: [str]) -> dict[str, list[str]]:
     """Updates the current attendance dictionary."""
-    if day in days_dict:
+    if (day in days_dict) and (student not in days_dict[day]):
         days_dict[day].append(student)
-    else:
+    if day not in days_dict:
         days_dict[day] = [student]
     return days_dict
